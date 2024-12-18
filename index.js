@@ -1,25 +1,19 @@
-function isPalindrome(word) {
-  // Write your algorithm here
+// Pseudocode:
+// 1. Define a function isPalindrome that takes a string as an argument.
+// 2. Check if the string is equal to its reverse.
+// 3. Return true if it is, false otherwise.
+
+function isPalindrome(str) {
+  // Reverse the string and compare it to the original
+  return str === str.split('').reverse().join('');
 }
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
-
-  console.log("");
-
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
-}
-
+// Export the function to make it available for testing
 module.exports = isPalindrome;
+
+// Additional test cases
+console.log(isPalindrome('madam')); // true
+console.log(isPalindrome('robot')); // false
+console.log(isPalindrome('a')); // true
+console.log(isPalindrome('ab')); // false
+console.log(isPalindrome('racecar')); // true
